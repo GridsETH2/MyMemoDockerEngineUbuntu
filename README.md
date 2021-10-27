@@ -97,6 +97,8 @@ For more examples and ideas, visit:
 
 คุณสามารถแชร์ images, automate workflows และอื่นๆ ด้วย Docker ID : สมัคร Docker ID ที่ https://hub.docker.com/ (มันฟรี)
 
+_Note :_ gridseth2 Password มากกว่า 9 characters.
+
 สำหรับตัวอย่างและแนวคิดเพิ่มเติมโปรดไปที่ : https://docs.docker.com/get-started/
 
 **ติดตั้ง Docker Engine**
