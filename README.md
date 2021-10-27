@@ -24,7 +24,9 @@ $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 คุณสามารถติดตั้ง Docker Engine ได้หลายวิธี ขึ้นอยู่กับความต้องการของคุณ แต่สำหรับผมในขั้นตอนนี้ผมจะติดตั้งโดยใช้ที่เก็บเนื่องจากอนาคตอาจมีการเปลี่ยนแปลงสถานที่ทำงาน
 
-**ติดตั้งที่เก็บ**
+**ติดตั้งโดยใช้ที่เก็บ** ก่อนที่คุณจะติดตั้ง Docker Engine เป็นครั้งแรกบนเครื่องโฮสต์ใหม่ คุณต้องตั้งค่าที่เก็บ Docker ก่อน หลังจากนั้นคุณจึงจะสามารถติดตั้งและอัปเดต Docker จากที่เก็บได้
+
+**ตั้งค่าที่เก็บ**
 
 1. อัพเดตaptดัชนีแพ็คเกจและติดตั้งแพ็คเกจเพื่ออนุญาตให้aptใช้ที่เก็บผ่าน HTTPS :
 ~~~
@@ -97,4 +99,81 @@ For more examples and ideas, visit:
 
 สำหรับตัวอย่างและแนวคิดเพิ่มเติมโปรดไปที่ : https://docs.docker.com/get-started/
 
-เสร็จสิ้นการติดตั้งที่เก็บ Docker Engine บน Ubuntu
+**ติดตั้ง Docker Engine**
+
+1. อัปเดต apt ดัชนีแพ็คเกจ : 
+~~~
+$ sudo apt-get update
+~~~
+ติดตั้ง Docker Engine เวอร์ชันล่าสุด และ คอนเทนเนอร์ :
+~~~
+$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+~~~
+_**หมายเหตุ :** หากคุณที่เก็บ Docker ที่เปิดใช้งานอยู่มากว่า 1 การติดตั้งหรืออัปเดตโดยไม่ระบุเวอร์ชันในคำสั่ง apt-get install หรือ apt-get update จะติดตั้งเวอร์ชันสูงสุดที่เป็นไปได้เสมอ ซึ่งอาจไม่เหมาะสมสำหรับความต้องการด้านความเสถียรของคุณ_
+
+2. หากต้องการติดตั้งเวอร์ชันเฉพาะของ Docker Engine ให้ระบุเวอร์ชันที่มีใน repo จากนั้นเลือกและติดตั้ง :
+
+คำสั่งนี้จะแสดงรายการเวอร์ชันที่เราสามารถใช้งานได้ :
+~~~
+$ apt-cache madison docker-ce
+~~~
+ผลลัพธในปัจจุบัน
+~~~
+ docker-ce | 5:20.10.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.10~2.1.rc1-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.8~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.8~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.7~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.7~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.6~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.6~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.5~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.5~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.4~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.4~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.3~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.3~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.2~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.2~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.1~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.1~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.0~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:20.10.0~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.0~2.2.rc2-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.0~2.1.rc1-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:20.10.0~1.1.beta1-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.15~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.15~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.14~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.14~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.13~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.13~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.13~1.2.beta2-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.12~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.12~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.11~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.11~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.10~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+ docker-ce | 5:19.03.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
+ docker-ce | 5:19.03.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
+~~~
+ติดตั้งเวอร์ชันเฉพาะโดยใช้สตริงเวอร์ชันจากคอลัมน์ที่สอง เช่น 5:18.09.1~3-0~ubuntu-xenial
+
+ผมจะใช้เวอร์ชันล่าสุดที่มีอยู่ตอนนี้ที่ผมสามารถใช้ได้ `5:20.10.10~3-0~ubuntu-focal` 
+
+รูปแบบคำสั่ง
+~~~
+sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+~~~
+ตัวอย่าง
+~~~
+sudo apt-get install docker-ce=5:20.10.10~3-0~ubuntu-focal docker-ce-cli=5:20.10.10~3-0~ubuntu-focal containerd.io
+~~~
+
+ตรวจสอบอีกครั้งว่า Docker Engine ได้รับการติดตั้งอย่างถูกต้องโดยเรียกใช้ hello-world ด้วยคำสั่ง `sudo docker run hello-world`
+
+ถ้าไม่มีข้อผิดพลาดใดๆ และผลที่ได้เหมือนกับการทดสอบในครั้งแรก เราก็จะเสร็จสิ้นกระบวนการ การติดตั้งที่เก็บ Docker Engine บน Ubuntu
