@@ -225,3 +225,24 @@ sudo apt-get install docker-ce=5:20.10.10~3-0~ubuntu-focal docker-ce-cli=5:20.10
 ตรวจสอบอีกครั้งว่า Docker Engine ได้รับการติดตั้งอย่างถูกต้องโดยเรียกใช้ hello-world ด้วยคำสั่ง `sudo docker run hello-world`
 
 ถ้าไม่มีข้อผิดพลาดใดๆ และผลที่ได้เหมือนกับการทดสอบในครั้งแรก เราก็จะเสร็จสิ้นกระบวนการ การติดตั้งที่เก็บ Docker Engine บน Ubuntu
+#
+## ถอนการติดตั้ง Docker Engine
+1. ถอนการติดตั้งแพ็คเกจ Docker Engine, CLI และ Containerd :
+~~~
+$ sudo apt-get purge docker-ce docker-ce-cli containerd.io
+~~~
+2. ลบ images คอนเทนเนอร์ และวอลุ่มทั้งหมด
+~~~
+$ sudo rm -rf /var/lib/docker
+$ sudo rm -rf /var/lib/containerd
+~~~
+#
+## Error
+Error เมื่อ update ubuntu
+~~~
+Err:1 https://download.docker.com/linux/ubuntu focal InRelease The following signatures couldn't be verified because the public key is not av
+~~~
+แก้ด้วย
+~~~
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+~~~
