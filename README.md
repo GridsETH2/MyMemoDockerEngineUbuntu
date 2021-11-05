@@ -209,7 +209,7 @@ $ apt-cache madison docker-ce
  docker-ce | 5:19.03.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
  docker-ce | 5:19.03.9~3-0~ubuntu-focal | https://download.docker.com/linux/ubuntu focal/test amd64 Packages
 ~~~
-ติดตั้งเวอร์ชันเฉพาะโดยใช้สตริงเวอร์ชันจากคอลัมน์ที่สอง เช่น 5:18.09.1~3-0~ubuntu-xenial
+ติดตั้งเวอร์ชันเฉพาะโดยใช้สตริงเวอร์ชันจากคอลัมน์ที่สอง เช่น 5:18.09.1-3-0-ubuntu-xenial
 
 ผมจะใช้เวอร์ชันล่าสุดที่มีอยู่ตอนนี้ที่ผมสามารถใช้ได้ `5:20.10.10~3-0~ubuntu-focal` 
 
