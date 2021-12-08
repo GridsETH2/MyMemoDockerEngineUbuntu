@@ -147,7 +147,7 @@ _Note :_ gridseth2 Password มากกว่า 9 characters.
 
 สำหรับตัวอย่างและแนวคิดเพิ่มเติมโปรดไปที่ : https://docs.docker.com/get-started/
 
-**ติดตั้ง Docker Engine**
+**ติดตั้ง Docker Engine** (Yes I am)
 
 1. อัปเดต apt ดัชนีแพ็คเกจ : 
 ~~~
