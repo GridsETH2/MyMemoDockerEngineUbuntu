@@ -41,8 +41,6 @@ $ sudo apt-get install \
 2. เพิ่มคีย์ GPG อย่างเป็นทางการของ Docker :
 ~~~
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-File '/usr/share/keyrings/docker-archive-keyring.gpg' exists. Overwrite? (y/N) y
 ~~~
 3. ใช้คำสั่งต่อไปนี้เพื่อตั้งค่าพื้นที่เก็บข้อมูลที่มีเสถียรภาพ หากต้องการเพิ่มพื้นที่เก็บข้อมูลทุกคืน หรือ ทดสอบ ให้เพิ่มคำ nightly หรือ test (หรือทั้งสองอย่าง) หลังคำ stable ในคำสั่งด้านล่าง 
 
