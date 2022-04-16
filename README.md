@@ -15,12 +15,14 @@
 - Ubuntu Bionic 18.04 (LTS)
 - Docker Engine is supported on x86_64 (or amd64), armhf, arm64, and s390x
 
+_**Note** : กรณีผมใช้ Ubuntu Focal 20.04 (LTS)_
+
 ถอนการติดตั้งเวอร์ชันเก่า (ถ้ามี)
 ~~~
 $ sudo apt-get remove docker docker-engine docker.io containerd runc
 ~~~
 
-**วิธีการติดตั้ง** (no for me)
+## Set up the repository
 
 คุณสามารถติดตั้ง Docker Engine ได้หลายวิธี ขึ้นอยู่กับความต้องการของคุณ แต่สำหรับผมในขั้นตอนนี้ผมจะติดตั้งโดยใช้ที่เก็บเนื่องจากอนาคตอาจมีการเปลี่ยนแปลงสถานที่ทำงาน
 
@@ -126,7 +128,9 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ~~~
-หมายเหตุ : ในกรณี ตรวจสอบ version docker แล้วระบบแจ้งว่า
+
+## เพิ่มเติม (ไม่จำเป็น)
+_**Note** : ในกรณี ตรวจสอบ version docker แล้วระบบแจ้งว่า_
 ~~~
 docker --v
 
@@ -188,21 +192,11 @@ For more examples and ideas, visit:
 
 คุณสามารถแชร์ images, automate workflows และอื่นๆ ด้วย Docker ID : สมัคร Docker ID ที่ https://hub.docker.com/ (มันฟรี)
 
-_Note :_ gridseth2 Password มากกว่า 9 characters.
+_**Note** : gridseth2 Password มากกว่า 9 characters._
 
 สำหรับตัวอย่างและแนวคิดเพิ่มเติมโปรดไปที่ : https://docs.docker.com/get-started/
 
-**ติดตั้ง Docker Engine** (Yes I am)
-
-1. อัปเดต apt ดัชนีแพ็คเกจ : 
-~~~
-$ sudo apt-get update
-~~~
-ติดตั้ง Docker Engine เวอร์ชันล่าสุด และ คอนเทนเนอร์ :
-~~~
-$ sudo apt-get install docker-ce docker-ce-cli containerd.io
-~~~
-_**หมายเหตุ :** หากคุณที่เก็บ Docker ที่เปิดใช้งานอยู่มากว่า 1 การติดตั้งหรืออัปเดตโดยไม่ระบุเวอร์ชันในคำสั่ง apt-get install หรือ apt-get update จะติดตั้งเวอร์ชันสูงสุดที่เป็นไปได้เสมอ ซึ่งอาจไม่เหมาะสมสำหรับความต้องการด้านความเสถียรของคุณ_
+_**Note :** หากคุณที่เก็บ Docker ที่เปิดใช้งานอยู่มากว่า 1 การติดตั้งหรืออัปเดตโดยไม่ระบุเวอร์ชันในคำสั่ง apt-get install หรือ apt-get update จะติดตั้งเวอร์ชันสูงสุดที่เป็นไปได้เสมอ ซึ่งอาจไม่เหมาะสมสำหรับความต้องการด้านความเสถียรของคุณ_
 
 2. หากต้องการติดตั้งเวอร์ชันเฉพาะของ Docker Engine ให้ระบุเวอร์ชันที่มีใน repo จากนั้นเลือกและติดตั้ง :
 
