@@ -2,6 +2,8 @@
 
 ## BASIC DOCKER COMMAND
 
+**command - manage docker `container`**
+
 **command - manage docker `images`**
 - List `images` in pc
 ~~~
