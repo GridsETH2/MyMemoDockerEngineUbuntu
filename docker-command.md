@@ -3,6 +3,9 @@
 ## BASIC DOCKER COMMAND
 
 **command - manage docker `container`**
+- Create `container`
+- Build `container` to `images`
+- Remove `container`
 
 **command - manage docker `images`**
 - List `images` in pc
