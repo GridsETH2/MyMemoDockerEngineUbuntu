@@ -3,9 +3,73 @@
 ## BASIC DOCKER COMMAND
 
 **command - manage docker `container`**
+
 - Create `container`
-- Build `container` to `images`
+~~~
+docker run [OPTION] IMAGE [COMMAND] [AGE...]
+~~~
+Example use [Apache2](https://hub.docker.com/r/ubuntu/apache2)
+~~~
+docker run -d --name apache2-container -e TZ=UTC -p 8080:80 ubuntu/apache2:2.4-21.10_beta
+~~~
+- Check status `container`
+~~~
+docker ps [OPTION]
+~~~
+Example
+~~~
+docker ps -a
+~~~
+- Start `container` 
+~~~
+docker start [OPTION] CONTAINER [CONTAINER...]
+~~~
+Example
+~~~
+docker start containet1
+~~~
+- Stop `container` 
+~~~
+docker stop [OPTION] CONTAINER [CONTAINER...]
+~~~
+Example
+~~~
+docker stop containet1
+~~~
+- Restart `container` 
+~~~
+docker restart [OPTION] CONTAINER [CONTAINER...]
+~~~
+Example
+~~~
+docker restart containet1
+~~~
+- Pause `container` 
+~~~
+docker pause CONTAINER [CONTAINER...]
+~~~
+Example
+~~~
+docker pause container1
+~~~
 - Remove `container`
+~~~
+docker rm [OPTION] CONTAINER [CONTAINER...]
+~~~
+Example
+~~~
+docker rm containet1
+~~~
+- Look log `container`
+~~~
+docker log containet1
+~~~
+- Look Environment `container`
+~~~
+docker stats
+~~~
+- Build `container` to `images`
+
 
 **command - manage docker `images`**
 - List `images` in pc
@@ -69,4 +133,13 @@ sudo docker commit [OPTIONS] CONTAINER [REPOSUTORY[:TAG]]
 - Tag `images`
 ~~~
 sudo docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+~~~
+## NETWORK DOCKER COMMAND
+Check Network Docker
+~~~
+docket network ls
+~~~
+Check IP Docker in localhost
+~~~
+ifconfig
 ~~~
