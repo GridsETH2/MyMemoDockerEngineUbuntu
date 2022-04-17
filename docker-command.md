@@ -26,7 +26,7 @@ docker start [OPTION] CONTAINER [CONTAINER...]
 ~~~
 Example
 ~~~
-docker start containet1
+docker start apache2-container
 ~~~
 - Stop `container` 
 ~~~
@@ -34,7 +34,7 @@ docker stop [OPTION] CONTAINER [CONTAINER...]
 ~~~
 Example
 ~~~
-docker stop containet1
+docker stop apache2-container
 ~~~
 - Restart `container` 
 ~~~
@@ -42,7 +42,7 @@ docker restart [OPTION] CONTAINER [CONTAINER...]
 ~~~
 Example
 ~~~
-docker restart containet1
+docker restart apache2-container
 ~~~
 - Pause `container` 
 ~~~
@@ -50,7 +50,7 @@ docker pause CONTAINER [CONTAINER...]
 ~~~
 Example
 ~~~
-docker pause container1
+docker pause apache2-container
 ~~~
 - Remove `container`
 ~~~
@@ -58,11 +58,11 @@ docker rm [OPTION] CONTAINER [CONTAINER...]
 ~~~
 Example
 ~~~
-docker rm containet1
+docker rm apache2-container
 ~~~
 - Look log `container`
 ~~~
-docker log containet1
+docker log apache2-container
 ~~~
 - Look Environment `container`
 ~~~
@@ -143,3 +143,12 @@ Check IP Docker in localhost
 ~~~
 ifconfig
 ~~~
+Find IP Container 
+~~~
+docker inspect --format='{{.NetworkSettings.IPAddress}}' apache2-container
+~~~
+and port 
+~~~
+docker inspect --format='{{.NetworkSettings.Ports}}' apache2-container
+~~~
+
