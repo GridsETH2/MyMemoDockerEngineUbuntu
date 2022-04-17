@@ -131,7 +131,13 @@ For more examples and ideas, visit:
 
 ## เพิ่มเติม
 
-คุณสามารถแชร์ images, automate workflows และอื่นๆ ด้วย Docker ID : สมัคร Docker ID ที่ https://hub.docker.com/ (มันฟรี)
+_**Note** : add user เพื่อไม่ต้องใช้คำสั่ง sudo ในการรัน docker_
+~~~
+devg@home:~$ sudo usermod -aG docker devg
+~~~
+_จากนั้น `sodu reboot`_
+
+_**Note** : คุณสามารถแชร์ images, automate workflows และอื่นๆ ด้วย Docker ID : สมัคร Docker ID ที่ https://hub.docker.com/ (มันฟรี)_
 
 _**Note** : gridseth2 Password มากกว่า 9 characters._
 
