@@ -1,0 +1,1 @@
+Docker Desktop สำหรับ Linux (เบต้า) พร้อมใช้งานบน Ubuntu 21.04, 21.10 และ Debian distributions
